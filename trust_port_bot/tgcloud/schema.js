@@ -1,3 +1,6 @@
+// tgcloud/schema.js
+// Database schema for TrustPort Security Shield on Telegram Serverless SQLite
+
 import { table, integer, text, boolean, json, index, sql } from 'sdk/db';
 
 export const chats = table('chats', {
@@ -10,6 +13,21 @@ export const chats = table('chats', {
   createdAt:   integer('created_at', { mode: 'timestamp' }).default(sql`(unixepoch())`),
 }, (t) => ({
   chatIdIdx: index('idx_chats_tg_id').on(t.tgChatId),
+}));
+
+export const businessConnections = table('business_connections', {
+  id:           integer('id').primaryKey({ autoIncrement: true }),
+  connectionId: text('connection_id').unique().notNull(),
+  userId:       integer('user_id').notNull(),
+  userName:     text('user_name'),
+  userChatId:   integer('user_chat_id').notNull(),
+  canReply:     boolean('can_reply').default(true),
+  isEnabled:    boolean('is_enabled').default(true),
+  threatCount:  integer('threat_count').default(0),
+  createdAt:    integer('created_at', { mode: 'timestamp' }).default(sql`(unixepoch())`),
+}, (t) => ({
+  bcConnIdx: index('idx_bc_conn_id').on(t.connectionId),
+  bcUserIdx: index('idx_bc_user_id').on(t.userId),
 }));
 
 export const threatLogs = table('threat_logs', {
