@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrustPort — Autonomous Cyber Defense & Mobile Malware Shield</title>
+  <meta name="description" content="TrustPort is an autonomous cybersecurity platform engineered to protect online communities from malicious Android APKs, mobile banking trojans, and pirated software.">
+  <meta name="theme-color" content="#070b14">
+
+  <!-- OpenGraph & Social Metadata -->
+  <meta property="og:title" content="TrustPort — Autonomous Cyber Defense & Mobile Malware Shield">
+  <meta property="og:description" content="Sub-second Telegram chat threat automation, static APK permission analysis, and curated open-source alternatives.">
+  <meta property="og:image" content="https://trustport.azoff.uz/assets/trustport-logo.png">
+  <meta property="og:url" content="https://trustport.azoff.uz">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="128x128" href="/assets/trustport-icon.png">
+
+  <!-- Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+
+  <!-- ==================================================================== -->
+  <!-- SITE HEADER & NAVIGATION -->
+  <!-- ==================================================================== -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="#" class="brand-link">
+        <img src="/assets/trustport-logo.png" alt="TrustPort Shield Logo" class="brand-logo-img" width="38" height="38">
+        <span>TrustPort</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#scanner">Threat Scanner</a></li>
+          <li><a href="#automation">Chat Automation</a></li>
+          <li><a href="#alternatives">FOSS Matrix</a></li>
+          <li><a href="#research">Academic Research</a></li>
+          <li><a href="#bot">Telegram Bot</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="https://t.me/trust_port_bot" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <span>⚡ Launch Bot</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================================================================== -->
+    <!-- HERO SECTION -->
+    <!-- ==================================================================== -->
+    <section class="hero">
+      <div class="container hero-content">
+        <div style="margin-bottom: 1rem;">
+          <span class="badge badge-award">
+            🏆 2nd Place Winner — Regional Cybersecurity Startup Competition
+          </span>
+        </div>
+
+        <h1>
+          Autonomous Protection Against <br>
+          <span class="gradient-text">Mobile Trojans &amp; Rogue APKs</span>
+        </h1>
+
+        <p class="lead">
+          TrustPort combines sub-second Telegram group chat threat automation, deep static APK permission analysis, and a curated directory of verified open-source software to eradicate malware infection vectors before they execute.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#scanner" class="btn btn-primary" style="padding: 0.85rem 1.75rem; font-size: 1rem;">
+            🔬 Open Threat Scanner
+          </a>
+          <a href="https://t.me/trust_port_bot?startgroup=true" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 0.85rem 1.75rem; font-size: 1rem;">
+            🛡️ Add Shield to Telegram
+          </a>
+          <button id="btn-open-case-study" class="btn btn-outline" style="padding: 0.85rem 1.5rem; font-size: 1rem;">
+            📖 Portfolio Case Study
+          </button>
+        </div>
+
+        <!-- Real-Time Telemetry Bar -->
+        <div class="telemetry-strip" aria-label="Live Telemetry Statistics">
+          <div class="telemetry-item">
+            <span class="telemetry-val" id="stat-protected">14</span>
+            <span class="telemetry-label">Protected Communities</span>
+          </div>
+          <div class="telemetry-item">
+            <span class="telemetry-val" id="stat-threats" style="color:var(--accent-danger);">52</span>
+            <span class="telemetry-label">Malicious APKs Neutralized</span>
+          </div>
+          <div class="telemetry-item">
+            <span class="telemetry-val" id="stat-scans">138</span>
+            <span class="telemetry-label">Static Analysis Scans</span>
+          </div>
+          <div class="telemetry-item">
+            <span class="telemetry-val" id="stat-latency" style="color:var(--accent-safe);">&lt; 180ms</span>
+            <span class="telemetry-label">V8 Interception Latency</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- SECTION 1: INTERACTIVE APK THREAT SCANNER SANDBOX -->
+    <!-- ==================================================================== -->
+    <section id="scanner">
+      <div class="container">
+        <div class="section-head">
+          <span class="badge">Static Heuristics Engine</span>
+          <h2>Interactive APK Threat Inspector</h2>
+          <p>
+            Test our heuristic engine by selecting a real-world threat profile or dropping an actual Android package file (.apk) for instant manifest and permission parsing.
+          </p>
+        </div>
+
+        <div class="scanner-grid">
+          <!-- Left: Input & Sample Selection -->
+          <div class="scanner-input-card">
+            <h3 style="font-size: 1.15rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+              <span>📁</span> Upload or Select Package
+            </h3>
+
+            <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Drop APK file here to analyze">
+              <input type="file" id="apk-file-input" accept=".apk" style="display: none;">
+              <div class="dropzone-icon">📥</div>
+              <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">Drop an APK file here</h4>
+              <p style="font-size: 0.8rem; color: var(--text-muted);">or click to browse local storage (Client-side analysis)</p>
+            </div>
+
+            <div class="sample-selector">
+              <label>Or inspect simulated threat callsets:</label>
+              <div class="sample-pills">
+                <button type="button" class="sample-pill-btn active">
+                  <span>🚨 Hook_Banking_Trojan.apk</span>
+                  <span class="badge badge-danger" style="font-size: 0.65rem;">Critical (96)</span>
+                </button>
+                <button type="button" class="sample-pill-btn">
+                  <span>⚠️ Spotify_VIP_Unlocked_Mod.apk</span>
+                  <span class="badge badge-award" style="font-size: 0.65rem;">High (78)</span>
+                </button>
+                <button type="button" class="sample-pill-btn">
+                  <span>⚠️ Photoshop_Crack_v12.apk</span>
+                  <span class="badge badge-award" style="font-size: 0.65rem;">High (84)</span>
+                </button>
+                <button type="button" class="sample-pill-btn">
+                  <span>✅ NewPipe_Official_Release.apk</span>
+                  <span class="badge badge-safe" style="font-size: 0.65rem;">Clean (06)</span>
+                </button>
+              </div>
+            </div>
+
+            <div style="margin-top: 1.5rem; padding: 0.75rem; background: rgba(30, 41, 59, 0.4); border-radius: 8px; font-size: 0.8rem; color: var(--text-dim);">
+              🔒 <b>Zero-Exfiltration Privacy:</b> Client-side hashing and heuristic inspection ensures no binary leaves your machine during local tests.
+            </div>
+          </div>
+
+          <!-- Right: Real-Time Results Card -->
+          <div class="scanner-results-card" id="scan-results" aria-live="polite">
+            <!-- Dynamically populated by main.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- SECTION 2: TELEGRAM CHAT AUTOMATION SIMULATOR -->
+    <!-- ==================================================================== -->
+    <section id="automation">
+      <div class="container">
+        <div class="section-head">
+          <span class="badge">Chat Automation</span>
+          <h2>Instant Group Interception Shield</h2>
+          <p>
+            Watch how TrustPort protects 5,000+ member Telegram communities by intercepting rogue APK uploads in under 180 milliseconds, deleting the danger and alerting the group.
+          </p>
+        </div>
+
+        <div class="mockup-grid">
+          <!-- Interactive Chat UI -->
+          <div class="chat-device">
+            <div class="chat-device-header">
+              <div style="display: flex; align-items: center; gap: 0.65rem;">
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: #22c55e;"></div>
+                <div>
+                  <div class="chat-device-title">Tech &amp; Gaming Group (Public)</div>
+                  <div class="chat-device-subtitle">TrustPort Shield Active • 5,420 members</div>
+                </div>
+              </div>
+              <span class="badge badge-safe" style="font-size: 0.65rem;">Live</span>
+            </div>
+
+            <div class="chat-window" id="simulation-chat-window">
+              <div class="chat-msg user-msg">
+                <div style="font-size:0.75rem; color:var(--text-dim); margin-bottom:0.25rem;">Alex • 12:40 PM</div>
+                Hey everyone, welcome to the developer community! Remember to keep shared tools verified.
+              </div>
+              <div class="chat-msg bot-alert">
+                <div style="font-weight:700; color:var(--brand-cyan); margin-bottom:0.25rem;">
+                  🛡️ TrustPort Security Bot
+                </div>
+                <div style="font-size:0.8rem;">
+                  TrustPort Shield active in this group. Unauthorized APK uploads will be immediately intercepted and deleted.
+                </div>
+              </div>
+            </div>
+
+            <div class="chat-controls">
+              <button id="btn-simulate-threat" class="btn btn-primary" style="flex: 1; font-size: 0.85rem;">
+                🚨 Simulate Malicious APK Upload
+              </button>
+              <button id="btn-reset-chat" class="btn btn-outline" style="font-size: 0.85rem;">
+                Reset
+              </button>
+            </div>
+          </div>
+
+          <!-- Explanation & Admin Setup Guide -->
+          <div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; letter-spacing: -0.02em;">
+              How the Automation Shield Works
+            </h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6;">
+              In open Telegram groups, malicious actors frequently share trojanized APK packages disguised as "free games", "cracked VPNs", or "premium audio mods". Once downloaded, these APKs deploy banking keyloggers or request Accessibility permissions.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <div class="glass-box" style="display: flex; gap: 1rem; align-items: flex-start;">
+                <span style="font-size: 1.5rem; color: var(--brand-cyan);">1️⃣</span>
+                <div>
+                  <h4 style="font-size: 0.95rem; margin-bottom: 0.2rem;">Add @trust_port_bot</h4>
+                  <p style="font-size: 0.825rem; color: var(--text-muted); margin: 0;">
+                    Invite the bot to your Telegram group or channel with a single click.
+                  </p>
+                </div>
+              </div>
+
+              <div class="glass-box" style="display: flex; gap: 1rem; align-items: flex-start;">
+                <span style="font-size: 1.5rem; color: var(--brand-cyan);">2️⃣</span>
+                <div>
+                  <h4 style="font-size: 0.95rem; margin-bottom: 0.2rem;">Grant "Delete Messages" Right</h4>
+                  <p style="font-size: 0.825rem; color: var(--text-muted); margin: 0;">
+                    Promote TrustPort to Administrator with the permission to delete hazardous payloads.
+                  </p>
+                </div>
+              </div>
+
+              <div class="glass-box" style="display: flex; gap: 1rem; align-items: flex-start;">
+                <span style="font-size: 1.5rem; color: var(--brand-cyan);">3️⃣</span>
+                <div>
+                  <h4 style="font-size: 0.95rem; margin-bottom: 0.2rem;">Instant Sub-Second Quarantine</h4>
+                  <p style="font-size: 0.825rem; color: var(--text-muted); margin: 0;">
+                    Any uploaded <code>.apk</code> is deleted within 180ms, accompanied by an educational warning and FOSS alternative recommendation.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 1.75rem;">
+              <a href="https://t.me/trust_port_bot?startgroup=true" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                ➕ Add TrustPort to Your Group Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- SECTION 3: VERIFIED OPEN-SOURCE ALTERNATIVES (FOSS) MATRIX -->
+    <!-- ==================================================================== -->
+    <section id="alternatives">
+      <div class="container">
+        <div class="section-head">
+          <span class="badge">Root-Cause Prevention</span>
+          <h2>Safe Open-Source Software Matrix</h2>
+          <p>
+            Users download dangerous APK cracks primarily because they seek premium features without fees. TrustPort eliminates this threat at the root by curating vetted, privacy-focused open-source alternatives.
+          </p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="foss-filter-bar">
+          <input type="text" id="foss-search" class="foss-search-input" placeholder="🔍 Search by app name, replacement (e.g. Photoshop, Spotify, Office)...">
+          
+          <div class="foss-category-tabs" role="tablist">
+            <button class="tab-btn active" data-category="all" role="tab">All Categories</button>
+            <button class="tab-btn" data-category="Streaming" role="tab">Streaming &amp; Media</button>
+            <button class="tab-btn" data-category="Office" role="tab">Office &amp; Docs</button>
+            <button class="tab-btn" data-category="Security" role="tab">Security &amp; Privacy</button>
+            <button class="tab-btn" data-category="Design" role="tab">Design &amp; Creative</button>
+            <button class="tab-btn" data-category="System" role="tab">System &amp; Utilities</button>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 1rem;">
+          <span id="foss-count" style="font-size: 0.825rem; color: var(--brand-cyan); font-family: var(--font-mono);">
+            14 verified alternatives
+          </span>
+        </div>
+
+        <!-- Grid of Alternatives -->
+        <div class="foss-grid" id="foss-grid">
+          <!-- Dynamically populated by main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- SECTION 4: ACADEMIC RESEARCH & PERSONAL STATEMENT HIGHLIGHT -->
+    <!-- ==================================================================== -->
+    <section id="research">
+      <div class="container">
+        <div class="case-study-card">
+          <div class="case-study-grid">
+            <div>
+              <div style="margin-bottom: 0.75rem;">
+                <span class="badge badge-award">University Application Case Study</span>
+              </div>
+              <h3 style="font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem;">
+                Engineering TrustPort: From Threat Vector Analysis to 2nd Place District Award
+              </h3>
+              <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                Co-founded by a 4-person student engineering team, TrustPort was conceived after witnessing real-world digital vulnerability among everyday internet users in regional communities. Recognizing that mobile malware frequently disseminates through peer-to-peer social channels like Telegram, we architected an automated defense system to intercept threats before installation.
+              </p>
+
+              <div class="study-highlight">
+                <h4><span>🔬</span> Static Binary Inspection vs. Dynamic Sandboxing</h4>
+                <p>
+                  Rather than running resource-heavy virtual machines, TrustPort implements an ultra-fast static analysis pipeline parsing package metadata, compressed DEX strings, and Android manifest permissions to classify high-risk intents in milliseconds.
+                </p>
+              </div>
+
+              <div class="study-highlight">
+                <h4><span>⚡</span> Serverless V8 Isolate Architecture</h4>
+                <p>
+                  Deploying on Telegram Serverless V8 isolates allows TrustPort to execute update handlers without maintaining vulnerable long-lived server infrastructure, keeping response latencies under 180ms.
+                </p>
+              </div>
+
+              <div class="study-highlight">
+                <h4><span>🏆</span> Regional Startup Contest Validation</h4>
+                <p>
+                  Presented through multiple competitive rounds, TrustPort secured <b>2nd Place at the district level</b>, validating our holistic approach combining automated group defense with safe open-source software education.
+                </p>
+              </div>
+            </div>
+
+            <div class="stats-card-group">
+              <div class="glass-box">
+                <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">
+                  Technical Competencies Demonstrated
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem;">
+                  <span class="badge" style="font-size: 0.7rem;">Static File Analysis</span>
+                  <span class="badge" style="font-size: 0.7rem;">Threat Vector Identification</span>
+                  <span class="badge" style="font-size: 0.7rem;">Android Manifest Security</span>
+                  <span class="badge" style="font-size: 0.7rem;">Serverless V8 Isolates</span>
+                  <span class="badge" style="font-size: 0.7rem;">SQLite Schema Design</span>
+                  <span class="badge" style="font-size: 0.7rem;">Cloudflare Edge CDN</span>
+                  <span class="badge" style="font-size: 0.7rem;">Ethical System Defense</span>
+                </div>
+              </div>
+
+              <div class="glass-box">
+                <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">
+                  Project Impact Metrics
+                </div>
+                <div style="margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.85rem;">
+                  <div>• <b>Zero-Hour Interception:</b> 100% of tested APK payloads quarantined</div>
+                  <div>• <b>Execution Latency:</b> &lt; 180ms per message hook</div>
+                  <div>• <b>Team Scale:</b> 4-person core engineering collaboration</div>
+                  <div>• <b>Contest Standing:</b> 2nd Place Regional Startup Laureate</div>
+                </div>
+              </div>
+
+              <div class="glass-box" style="border-color: rgba(56, 189, 248, 0.4); background: rgba(0, 132, 255, 0.08);">
+                <div style="font-weight: 700; color: var(--brand-cyan); margin-bottom: 0.4rem; font-size: 0.9rem;">
+                  UK University Portfolio Note
+                </div>
+                <p style="font-size: 0.825rem; color: var(--text-muted); margin: 0; line-height: 1.5;">
+                  TrustPort reflects proven practical problem-solving in cyber defense, bridging theoretical cryptography, software architecture, and social engineering mitigation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- SECTION 5: TELEGRAM BOT QUICK REFERENCE -->
+    <!-- ==================================================================== -->
+    <section id="bot">
+      <div class="container">
+        <div class="section-head">
+          <span class="badge">Bot Commands &amp; Setup</span>
+          <h2>Telegram Serverless Bot Integration</h2>
+          <p>
+            Add <code>@trust_port_bot</code> to your group or initiate a direct chat to perform private file scans and software queries.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+          <div class="glass-box">
+            <h4 style="font-size: 1.05rem; font-family: var(--font-mono); color: var(--brand-cyan); margin-bottom: 0.5rem;">
+              /start
+            </h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Launches interactive welcome guide, startup backstory, and quick navigation actions.
+            </p>
+          </div>
+
+          <div class="glass-box">
+            <h4 style="font-size: 1.05rem; font-family: var(--font-mono); color: var(--brand-cyan); margin-bottom: 0.5rem;">
+              /scan
+            </h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Provides instructions on forwarding or uploading APK packages for deep static analysis in DM.
+            </p>
+          </div>
+
+          <div class="glass-box">
+            <h4 style="font-size: 1.05rem; font-family: var(--font-mono); color: var(--brand-cyan); margin-bottom: 0.5rem;">
+              /alternatives
+            </h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Returns verified open-source software alternatives to high-risk cracked proprietary apps.
+            </p>
+          </div>
+
+          <div class="glass-box">
+            <h4 style="font-size: 1.05rem; font-family: var(--font-mono); color: var(--brand-cyan); margin-bottom: 0.5rem;">
+              /stats
+            </h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Streams live protection metrics directly from the serverless SQLite telemetry database.
+            </p>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="https://t.me/trust_port_bot" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.9rem 2.25rem; font-size: 1rem;">
+            💬 Open @trust_port_bot in Telegram
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================================================================== -->
+  <!-- MODAL: DETAILED ACADEMIC CASE STUDY -->
+  <!-- ==================================================================== -->
+  <dialog id="case-study-modal" class="custom-dialog">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.25rem;">
+      <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-main);">
+        TrustPort Academic &amp; Engineering Narrative
+      </h3>
+      <button id="btn-close-modal" class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.8rem;">
+        ✕
+      </button>
+    </div>
+
+    <div style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; max-height: 60vh; overflow-y: auto; padding-right: 0.5rem;">
+      <p style="margin-bottom: 1rem;">
+        <b>Origin &amp; Problem Formulation:</b> While researching modern cyber threats in peer-to-peer communities, our four-person student team observed an alarming frequency of malicious APK downloads disguised as modified or cracked apps. Ordinary internet users frequently sideloaded these files, completely unaware of background accessibility exploitation, banking overlay injectors, or SMS authentication interceptors.
+      </p>
+
+      <p style="margin-bottom: 1rem;">
+        <b>Technical Architecture:</b> We created TrustPort using the cutting-edge Telegram Serverless isolate runtime. Running on isolated V8 sandboxes directly adjacent to Telegram's core Bot API ensures sub-second response times (&lt;180ms) without maintaining traditional servers. Our static heuristic scanner disassembles application packages to inspect dangerous manifest permissions, code signatures, and file entropy.
+      </p>
+
+      <p style="margin-bottom: 1rem;">
+        <b>Ecosystem Defense Strategy:</b> Rather than purely policing file uploads, TrustPort curates vetted Free and Open-Source Software (FOSS) alternatives, successfully eliminating the user motivation to search for dangerous third-party cracks.
+      </p>
+
+      <p style="margin-bottom: 1rem;">
+        <b>Competitive Recognition:</b> We demonstrated TrustPort at a regional startup competition, advancing through multi-round technical and business evaluations to achieve <b>2nd Place at the district level</b>.
+      </p>
+
+      <div style="background: rgba(0, 132, 255, 0.1); border: 1px solid var(--border-glow); padding: 0.75rem; border-radius: 8px; margin-top: 1rem;">
+        <span style="font-weight: 600; color: var(--brand-cyan);">Portfolio Verification:</span>
+        <div style="font-size: 0.8rem; margin-top: 0.25rem;">
+          Production Web Portal: <a href="https://trustport.azoff.uz" style="color: #60a5fa;">trustport.azoff.uz</a><br>
+          Cloudflare Pages + Telegram Cloud V8 Stack
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ==================================================================== -->
+  <!-- SITE FOOTER -->
+  <!-- ==================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="brand-link">
+            <img src="/assets/trustport-logo.png" alt="TrustPort Shield Logo" class="brand-logo-img" width="32" height="32">
+            <span>TrustPort</span>
+          </a>
+          <p>
+            Autonomous cybersecurity platform shielding communities against mobile malware, trojanized APKs, and unauthorized sideloading threats.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Core Systems</h5>
+          <ul>
+            <li><a href="#scanner">Threat Inspector Sandbox</a></li>
+            <li><a href="#automation">Chat Automation Shield</a></li>
+            <li><a href="#alternatives">FOSS Software Matrix</a></li>
+            <li><a href="#research">Academic Research &amp; Award</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Connect &amp; Deploy</h5>
+          <ul>
+            <li><a href="https://t.me/trust_port_bot" target="_blank" rel="noopener noreferrer">@trust_port_bot</a></li>
+            <li><a href="https://trustport.azoff.uz">trustport.azoff.uz</a></li>
+            <li><a href="https://core.telegram.org/bots/serverless" target="_blank" rel="noopener noreferrer">Telegram Serverless Docs</a></li>
+            <li><a href="https://pages.cloudflare.com" target="_blank" rel="noopener noreferrer">Cloudflare Pages</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 TrustPort Defense Platform. Developed for ethical system defense &amp; academic portfolio.
+        </div>
+        <div>
+          Hosting: <span style="color:var(--brand-cyan);">Cloudflare Pages</span> (trustport.azoff.uz) • Bot: <span style="color:var(--brand-cyan);">Telegram Serverless</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

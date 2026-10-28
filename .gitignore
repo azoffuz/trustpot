@@ -1,0 +1,12 @@
+node_modules/
+.DS_Store
+*.log
+.env
+.env.local
+
+# Web build output (can be rebuilt with npm run build)
+web/dist/
+
+# Telegram serverless internal cache
+trust_port_bot/.tgcloud/state.json
+trust_port_bot/.tgcloud/snapshot/
